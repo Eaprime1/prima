@@ -1,9 +1,7 @@
-# packages.yaml — Concept Package Manifest
+# packages.yaml — Concept Package Reference
 # List packages this concept requires or recommends.
-# The bootstrap script reads this file.
-
-# Package manager to use (pkg | apt | brew | apt-get)
-manager: pkg
+# This file is currently documentation for maintainers; the bootstrap script
+# installs its own hard-coded defaults and does not read this file.
 
 required:
   # Packages that must be installed for any quest to function.
