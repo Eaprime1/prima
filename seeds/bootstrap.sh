@@ -28,7 +28,7 @@ if [ "$MANAGER" != "none" ]; then
     echo "==> Installing required packages via $MANAGER..."
     # TODO: Parse packages.yaml required list and install.
     # For now, install the defaults:
-    $MANAGER install -y git curl 2>/dev/null || true
+    $MANAGER install -y git curl
 fi
 
 # ---------------------------------------------------------------------------
