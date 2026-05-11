@@ -13,7 +13,7 @@ PATTERNS=(
   "REPLACE"
   "fill this in"
   "TBD"
-  "\?\?\?"
+  "???"
   "UNKNOWN"
   "My Prima Terminal"
 )
