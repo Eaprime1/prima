@@ -16,6 +16,11 @@ PATTERNS=(
   "???"
   "UNKNOWN"
   "My Prima Terminal"
+  "[CONCEPT NAME]"
+  "YYYY-MM-DD"
+  "[current prime state]"
+  "[contributor handle or name]"
+  "[one-line tagline]"
 )
 
 echo "Scanning for distressed lexemes in: $ROOT"
