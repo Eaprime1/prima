@@ -18,7 +18,7 @@ if [[ ! -f "$INCOMING" ]]; then
   exit 1
 fi
 
-printf "\n---\nreceived: %s\nfragment: %s\nthe what:\nyod mark:\nember:     warm\n---\n" "$TIMESTAMP" "$FRAGMENT" >> "$INCOMING"
+21:printf "\n---\nreceived: %s\nfragment: |-\n  %s\nthe what:\nyod mark:\nember:     warm\n---\n" "$TIMESTAMP" "$FRAGMENT" >> "$INCOMING"
 
 echo ""
 echo "THEE received: \"$FRAGMENT\""
