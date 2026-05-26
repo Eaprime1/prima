@@ -76,8 +76,22 @@ fi
 
 if [ "$MANAGER" != "none" ]; then
     echo "==> Installing required packages via $MANAGER..."
-    [ "$MANAGER" = "apt-get" ] && "$MANAGER" update
-    "$MANAGER" install -y "${REQUIRED_PACKAGES[@]}"
+    INSTALL_PREFIX=()
+    if [ "$MANAGER" = "apt-get" ] && [ "$(id -u)" -ne 0 ]; then
+        if command -v sudo &>/dev/null; then
+            INSTALL_PREFIX=(sudo)
+        else
+            echo "WARN: apt-get requires elevated privileges. Re-run bootstrap as root or install these packages manually: ${REQUIRED_PACKAGES[*]}"
+            MANAGER="none"
+        fi
+    fi
+
+    if [ "$MANAGER" != "none" ]; then
+        if [ "$MANAGER" = "apt-get" ]; then
+            "${INSTALL_PREFIX[@]}" "$MANAGER" update
+        fi
+        "${INSTALL_PREFIX[@]}" "$MANAGER" install -y "${REQUIRED_PACKAGES[@]}"
+    fi
 fi
 
 # ---------------------------------------------------------------------------

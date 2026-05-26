@@ -1,4 +1,3 @@
-```markdown
 # repo_template_prima Development Patterns
 
 > Auto-generated skill from repository analysis
@@ -14,21 +13,21 @@ This skill teaches the core development conventions and workflows used in the `r
   ```plaintext
   getting-started.md
   quest-config.yml
-  sync-seeds.sh
+  bootstrap.sh
   ```
 
 ### Markdown Structure
 - **Pattern:** Use clear heading hierarchy, short sections, and fenced code blocks for commands/examples
 - **Example:**
-  ```markdown
+  ````markdown
   ## Setup
 
   Run the following command:
 
   ```bash
-  ./scripts/bootstrap.sh
+  bash seeds/bootstrap.sh
   ```
-  ```
+  ````
 
 ### YAML Style
 - **Pattern:** Use consistent indentation and descriptive keys
@@ -78,18 +77,15 @@ This skill teaches the core development conventions and workflows used in the `r
 - **Examples:**
   ```plaintext
   guides/getting-started.md
-  seeds/example-seed.yml
-  scripts/bootstrap.sh
+  seeds/packages.yaml
+  seeds/bootstrap.sh
   ```
 - **Typical validation tasks:**
   ```bash
-  # preview rendered markdown if applicable
-  # validate YAML syntax with your standard tooling
-  # run relevant shell commands in a safe environment
+  bash -n seeds/bootstrap.sh
   ```
 
 ## Commands
 | Command      | Purpose                                                   |
 |--------------|-----------------------------------------------------------|
 | /docs-update | Update repository documentation, templates, and content   |
-```
