@@ -4,82 +4,92 @@
 > Auto-generated skill from repository analysis
 
 ## Overview
-This skill teaches the core development conventions and workflows used in the `repo_template_prima` TypeScript repository. It covers file organization, code style, commit practices, and testing patterns to ensure consistency and maintainability across the codebase.
+This skill teaches the core development conventions and workflows used in the `repo_template_prima` repository. The repository is primarily documentation- and template-oriented, with content and configuration stored in Markdown, YAML, and Bash-oriented files under directories such as `seeds/`, `quests/`, and `guides/`. Use these patterns to keep repository content consistent, readable, and easy to maintain.
 
 ## Coding Conventions
 
 ### File Naming
-- **Pattern:** PascalCase
+- **Pattern:** Descriptive, lowercase, kebab-case names for content and configuration files
 - **Example:**  
   ```plaintext
-  MyComponent.ts
-  UserService.ts
+  getting-started.md
+  quest-config.yml
+  sync-seeds.sh
   ```
 
-### Import Style
-- **Pattern:** Relative imports
+### Markdown Structure
+- **Pattern:** Use clear heading hierarchy, short sections, and fenced code blocks for commands/examples
 - **Example:**
-  ```typescript
-  import { UserService } from './UserService';
+  ```markdown
+  ## Setup
+
+  Run the following command:
+
+  ```bash
+  ./scripts/bootstrap.sh
+  ```
   ```
 
-### Export Style
-- **Pattern:** Named exports
+### YAML Style
+- **Pattern:** Use consistent indentation and descriptive keys
 - **Example:**
-  ```typescript
-  export function fetchData() { ... }
-  export const API_URL = 'https://api.example.com';
+  ```yaml
+  name: sample-quest
+  description: Introductory workflow
+  steps:
+    - seed-content
+    - validate-output
   ```
 
 ### Commit Messages
-- **Pattern:** Conventional commits with `docs` prefix
+- **Pattern:** Conventional commits with a documentation-oriented prefix when changing guides, templates, or content
 - **Example:**
   ```plaintext
   docs: update README with installation instructions
-  docs: add API usage examples
+  docs: clarify quest authoring steps
+  chore: reorganize template directories
   ```
 
 ## Workflows
 
-### Documenting Code Changes
-**Trigger:** When updating documentation or comments  
+### Updating Repository Content
+**Trigger:** When editing guides, templates, seed content, or repository documentation  
 **Command:** `/docs-update`
 
-1. Make your documentation or comment changes.
-2. Stage the changes:
+1. Make your Markdown, YAML, or shell-script changes.
+2. Review formatting, links, and indentation for consistency.
+3. Stage the changes:
    ```bash
    git add .
    ```
-3. Commit using the conventional format:
+4. Commit using a conventional message:
    ```bash
-   git commit -m "docs: describe the new API endpoint"
+   git commit -m "docs: update guide wording"
    ```
-4. Push your changes:
+5. Push your changes:
    ```bash
    git push
    ```
 
-## Testing Patterns
+## Validation Patterns
 
-- **Framework:** Not detected (add your preferred framework if needed)
-- **Test File Pattern:** Files named with `.test.` in the filename
-- **Example:**
+- **Primary checks:** Verify Markdown formatting, YAML structure, and shell command accuracy
+- **File patterns:** Content is commonly stored in `.md`, `.yml`/`.yaml`, and `.sh` files
+- **Examples:**
   ```plaintext
-  UserService.test.ts
+  guides/getting-started.md
+  seeds/example-seed.yml
+  scripts/bootstrap.sh
   ```
-- **Typical Test Structure:**
-  ```typescript
-  import { fetchData } from './UserService';
-
-  describe('fetchData', () => {
-    it('should return user data', () => {
-      // test implementation
-    });
-  });
+- **Typical validation tasks:**
+  ```bash
+  # preview rendered markdown if applicable
+  # validate YAML syntax with your standard tooling
+  # run relevant shell commands in a safe environment
   ```
 
 ## Commands
-| Command        | Purpose                                      |
-|----------------|----------------------------------------------|
-| /docs-update   | Document code changes with proper commit style |
+| Command      | Purpose                                                   |
+|--------------|-----------------------------------------------------------|
+| /docs-update | Update repository documentation, templates, and content   |
 ```
