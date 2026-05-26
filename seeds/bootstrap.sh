@@ -76,6 +76,7 @@ fi
 
 if [ "$MANAGER" != "none" ]; then
     echo "==> Installing required packages via $MANAGER..."
+    [ "$MANAGER" = "apt-get" ] && "$MANAGER" update
     "$MANAGER" install -y "${REQUIRED_PACKAGES[@]}"
 fi
 
