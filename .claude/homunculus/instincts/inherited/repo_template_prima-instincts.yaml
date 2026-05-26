@@ -1,0 +1,64 @@
+# Instincts curated for https://github.com/Eaprime1/repo_template_prima
+# Updated: 2026-05-26
+# Version: 2.1
+# NOTE: Keep this file limited to conventions that are directly supported by the current repository contents.
+
+---
+id: repo_template_prima-file-types
+trigger: "when exploring or editing the repository"
+confidence: 0.95
+domain: repository-structure
+source: manual-curation
+source_repo: https://github.com/Eaprime1/repo_template_prima
+---
+
+# Repo_template_prima File Types
+
+## Action
+
+Treat this repository as primarily Markdown, YAML, and Bash content.
+
+## Evidence
+
+- Top-level files and folders are dominated by `.md`, `.yaml`, and `.sh` content.
+- Key directories include `guides/`, `quests/`, `seeds/`, `unexusi/`, and `world/`.
+
+---
+id: repo_template_prima-content-file-naming
+trigger: "when creating guides, seed files, quests, or world content"
+confidence: 0.8
+domain: naming
+source: manual-curation
+source_repo: https://github.com/Eaprime1/repo_template_prima
+---
+
+# Repo_template_prima Content File Naming
+
+## Action
+
+Prefer descriptive lowercase kebab-case names for repository content and configuration files, while preserving established filenames such as `README.md`.
+
+## Evidence
+
+- Examples include `guides/getting-started.md`, `world/factions.md`, `world/lore.md`, and `unexusi/connect.yaml`.
+- Existing section index files use the established uppercase `README.md` pattern.
+
+---
+id: repo_template_prima-bootstrap-validation
+trigger: "when changing seeds/bootstrap.sh"
+confidence: 0.95
+domain: validation
+source: manual-curation
+source_repo: https://github.com/Eaprime1/repo_template_prima
+---
+
+# Repo_template_prima Bootstrap Validation
+
+## Action
+
+Validate bootstrap script changes with `bash -n seeds/bootstrap.sh`.
+
+## Evidence
+
+- `seeds/bootstrap.sh` is the repository's bootstrap entry point.
+- The repository currently has no dedicated test suite or linter configuration beyond shell syntax validation for this script.
