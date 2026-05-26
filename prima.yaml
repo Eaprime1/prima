@@ -18,6 +18,12 @@ runtime:
   min_android_api: 24              # Termux only — omit for other platforms
   required_packages: []
   optional_packages: []
+runtime:
+  # Termux is the system resource — list what this concept needs from it.
+  platform: "termux"               # termux | linux | macos | any
+  min_android_api: 24              # Termux only — omit for other platforms
+
+unexusi:
 
 unexusi:
   profile_version: "1.0"
