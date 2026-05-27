@@ -18,7 +18,8 @@ if [[ ! -f "$INCOMING" ]]; then
   exit 1
 fi
 
-21:printf "\n---\nreceived: %s\nfragment: |-\n  %s\nthe what:\nyod mark:\nember:     warm\n---\n" "$TIMESTAMP" "$FRAGMENT" >> "$INCOMING"
+INDENTED_FRAGMENT=$(printf '%s\n' "$FRAGMENT" | sed 's/^/  /')
+printf "\n---\nreceived: %s\nfragment: |-\n%s\nthe what:\nyod mark:\nember:     warm\n---\n" "$TIMESTAMP" "$INDENTED_FRAGMENT" >> "$INCOMING"
 
 echo ""
 echo "THEE received: \"$FRAGMENT\""

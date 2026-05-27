@@ -28,12 +28,13 @@ echo ""
 
 FOUND=0
 for PATTERN in "${PATTERNS[@]}"; do
-  MATCHES=$(grep -rFin -- "$PATTERN" "$ROOT" \
+  MATCHES=$(grep -rFin \
     --include="*.md" --include="*.sh" --include="*.yaml" --include="*.json" \
-    --exclude-dir=".git" 2>/dev/null || true)
+    --exclude-dir=".git" \
+    -- "$PATTERN" "$ROOT" 2>/dev/null || true)
   if [[ -n "$MATCHES" ]]; then
     echo "  [$PATTERN]"
-    echo "$MATCHES" | sed 's/^/    /'
+    sed 's/^/    /' <<< "$MATCHES"
     echo ""
     FOUND=1
   fi
