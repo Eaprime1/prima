@@ -34,7 +34,9 @@ for PATTERN in "${PATTERNS[@]}"; do
     -- "$PATTERN" "$ROOT" 2>/dev/null || true)
   if [[ -n "$MATCHES" ]]; then
     echo "  [$PATTERN]"
-    sed 's/^/    /' <<< "$MATCHES"
+printf '%s\n' "    ${MATCHES//$'
+'/$'
+'    }"
     echo ""
     FOUND=1
   fi
