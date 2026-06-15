@@ -32,7 +32,7 @@ That door is labeled THE.
 
 ## The First Chamber
 
-`chambers/the-the/` — the mystery of THE THE
+`intake/chambers/the-the/` — the mystery of THE THE
 
 The founding chamber. The door about the door.  
 All other chambers inherit from this one.
@@ -50,7 +50,7 @@ When a fragment in `incoming.md` becomes something you have entered:
 5. Run `bash tools/thee.sh "[name] chamber opened"` to log it
 
 ```
-chambers/
+intake/chambers/
   the-the/          ← first chamber
   [your-concept]/   ← chambers grow here
 ```
