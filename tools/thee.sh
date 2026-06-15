@@ -18,7 +18,9 @@ if [[ ! -f "$INCOMING" ]]; then
   exit 1
 fi
 
-INDENTED_FRAGMENT=$(printf '%s\n' "$FRAGMENT" | sed 's/^/  /')
+INDENTED_FRAGMENT="  ${FRAGMENT//$'
+'/$'
+'  }"
 printf "\n---\nreceived: %s\nfragment: |-\n%s\nthe what:\nyod mark:\nember:     warm\n---\n" "$TIMESTAMP" "$INDENTED_FRAGMENT" >> "$INCOMING"
 
 echo ""
