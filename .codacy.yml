@@ -2,7 +2,7 @@ exclude_paths:
   - "intake/**"
   - "turns/**"
   - "unexusi/**"
-  - "seeds/**"
+  - "seeds/**/*.md"
   - "quests/**"
   - ".agents/**"
   - ".claude/**"
