@@ -43,9 +43,9 @@ Template:
 - **Resonance:** one word
 - **Ethics check:** none / all clear
 
-**5. Review gate.** Shepherd review required. Deck Master review is also required when the closure touches `vault/`, `moav/`, `prima-clock/`, `branch-tracker/`, `world/`, or `device/`, or when the closure represents a significant lifecycle transition (per `world/deck-master.md`). Deck Master and Shepherd are currently held by the same person (eaprime1); both roles still require acknowledgment.
+**5. Review gate.** Owner review required (`.github/CODEOWNERS`). This template doesn't carry custos's `vault/`, `moav/`, `prima-clock/`, `branch-tracker/`, `world/`, or `device/` structure, or a Deck Master role — if a fork grows into that structure, add an equivalent gate here rather than assuming this template's leaner review is still enough.
 
-**6. Merge.** Use a **merge commit** (not squash). Squashing collapses the branch history, which defeats the lineage preservation that makes this procedure meaningful. The closure note lands on main. The archivist captures the stub automatically.
+**6. Merge.** Use a **merge commit** (not squash). Squashing collapses the branch history, which defeats the lineage preservation that makes this procedure meaningful. The closure note lands on main. (Custos has an archivist workflow that auto-captures a stub for every merge; this repo doesn't have that yet — the closure note itself is the record until it does.)
 
 **7. Delete the branch.** After merge, delete the branch. The commit graph preserves the lineage.
 

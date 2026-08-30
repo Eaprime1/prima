@@ -1,6 +1,8 @@
 # Sovran BBS — Label Schema
 #
-# Canonical label definitions for the custos Sovran system.
+# Canonical label definitions for the Sovran system — shared across the
+# constellation of repos descended from this template (custos, prima, and
+# siblings).
 # Applied by: .github/workflows/sovran-labels-sync.yml
 # Usage: comment `@claude sync-labels` on any issue or PR,
 #        or trigger manually from the Actions tab.
